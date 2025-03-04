@@ -8,5 +8,5 @@ RUN npm install
 # Copiar el resto de los archivos del directorio actual (backend)
 COPY . .
 
-EXPOSE 3001
+EXPOSE 10000
 CMD [ "node", "server.js" ]
