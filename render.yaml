@@ -7,11 +7,9 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-    port: 3001
 
   - type: web
     name: frontend
     env: docker
     dockerfilePath: ./frontend/Dockerfile
     plan: free
-    port: 80
