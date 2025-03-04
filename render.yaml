@@ -1,8 +1,9 @@
 services:
   - type: web
     name: backend
-    env: docker
-    dockerfilePath: ./backend/Dockerfile
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
     plan: free
     envVars:
       - key: NODE_ENV
@@ -10,6 +11,7 @@ services:
 
   - type: web
     name: frontend
-    env: docker
-    dockerfilePath: ./frontend/Dockerfile
+    runtime: docker
+    rootDir: frontend
+    dockerfilePath: ./Dockerfile
     plan: free
