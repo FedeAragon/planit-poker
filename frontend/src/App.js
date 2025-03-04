@@ -93,7 +93,7 @@ function App() {
       const formData = new FormData();
       formData.append('file', file);
       try {
-        const response = await axios.post('http://localhost:3001/upload-csv', formData);
+        const response = await axios.post('https://backend-qqht.onrender.com:10000/upload-csv', formData);
         setTasks(response.data.tasks);
       } catch (error) {
         console.error('Error al subir el CSV', error);
