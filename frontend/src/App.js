@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import axios from 'axios';
 import './App.css'; // Puedes mover los estilos a un archivo CSS
 
-const socket = io('https://backend-qqht.onrender.com:10000');
+const socket = io('https://backend-qqht.onrender.com');
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -93,7 +93,7 @@ function App() {
       const formData = new FormData();
       formData.append('file', file);
       try {
-        const response = await axios.post('https://backend-qqht.onrender.com:10000/upload-csv', formData);
+        const response = await axios.post('https://backend-qqht.onrender.com/upload-csv', formData);
         setTasks(response.data.tasks);
       } catch (error) {
         console.error('Error al subir el CSV', error);
