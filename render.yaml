@@ -1,1 +1,17 @@
-env: docker-compose
+services:
+  - type: web
+    name: backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+    port: 3001
+
+  - type: web
+    name: frontend
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    plan: free
+    port: 80
