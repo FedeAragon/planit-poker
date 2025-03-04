@@ -9,7 +9,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: "3001"
+        value: "10000"
 
   - type: web
     name: frontend
