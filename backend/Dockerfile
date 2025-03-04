@@ -1,17 +1,9 @@
-# backend/Dockerfile
 FROM node:18-alpine
-
 WORKDIR /usr/src/app
-
-# Copiamos package.json y package-lock.json (si lo hay)
-COPY package*.json ./
-
-# Instalamos dependencias
+# Copiamos package.json y package-lock.json desde el subdirectorio backend
+COPY ./backend/package*.json ./
 RUN npm install
-
-# Copiamos el resto de la aplicación
-COPY . .
-
+# Copiamos todo el contenido del subdirectorio backend
+COPY ./backend .
 EXPOSE 3001
-
 CMD [ "node", "server.js" ]
