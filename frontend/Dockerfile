@@ -1,15 +1,17 @@
+# Etapa 1: Build de la aplicación React
 FROM node:18-alpine AS build
 
 WORKDIR /app
 
-# Copiar los archivos package.json y package-lock.json desde el subdirectorio frontend
-COPY ./frontend/package*.json ./
+# Copiar package.json y package-lock.json desde el contexto (ya es el directorio frontend)
+COPY package*.json ./
 RUN npm install
 
-# Copiar el resto de los archivos del directorio frontend
-COPY ./frontend .
+# Copiar el resto de los archivos del directorio actual (frontend)
+COPY . .
 RUN npm run build
 
+# Etapa 2: Servir el build con nginx
 FROM nginx:alpine
 
 # Copiar el build de la aplicación al directorio de nginx
