@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import axios from 'axios';
 import './App.css'; // Puedes mover los estilos a un archivo CSS
 
-const socket = io('http://localhost:3001');
+const socket = io('https://backend-qqht.onrender.com:3001');
 
 function App() {
   const [userName, setUserName] = useState('');
